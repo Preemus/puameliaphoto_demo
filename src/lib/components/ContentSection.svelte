@@ -1,9 +1,10 @@
 <script lang="ts">
   import { fly } from 'svelte/transition';
   import { onMount } from 'svelte';
+    import { base } from '$app/paths';
 
   export let title: string;
-  export let dividerImage = '/puameliaphoto_demo/images/line.png';
+  export let dividerImage = `${base}/images/line.png`;
   export let mainImage: string;
   export let description: string;
   export let whatIncluded: string;

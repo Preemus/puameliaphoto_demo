@@ -1,5 +1,7 @@
 <script lang="ts">
-  export let dividerImage = '/images/line.png';
+    import { base } from "$app/paths";
+
+  export let dividerImage = `${base}/images/line.png`;
 </script>
 
 <section class="py-12 fff4d4">
@@ -10,12 +12,12 @@
   
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each [
-          { img: "/puameliaphoto_demo/images/pricing/product/product_image1.jpg"},
-          { img: "/puameliaphoto_demo/images/pricing/product/product_image2.jpg"},
-          { img: "/puameliaphoto_demo/images/pricing/product/product_image3.jpg"},
-          { img: "/puameliaphoto_demo/images/pricing/product/product_image4.jpg"},
-          { img: "/puameliaphoto_demo/images/pricing/product/product_image5.jpg"},
-          { img: "/puameliaphoto_demo/images/pricing/product/product_image6.jpg"},
+          { img: `${base}/images/pricing/product/product_image1.jpg`},
+          { img: `${base}/images/pricing/product/product_image2.jpg`},
+          { img: `${base}/images/pricing/product/product_image3.jpg`},
+          { img: `${base}/images/pricing/product/product_image4.jpg`},
+          { img: `${base}/images/pricing/product/product_image5.jpg`},
+          { img: `${base}/images/pricing/product/product_image6.jpg`},
         ] as service}
           <div class="flex flex-col items-center text-center">
               <div class="w-full h-64 bg-gray-200 rounded-md overflow-hidden">

@@ -1,10 +1,11 @@
 <script lang="ts">
+    import { base } from '$app/paths';
   import ContentSection from '$lib/components/ContentSection.svelte';
 
   // Portrait data
   const portraitData = {
     title: "Family Portraits",
-    mainImage: "/puameliaphoto_demo/images/pricing/portrait/family_portrait.jpg",
+    mainImage: `${base}/images/pricing/portrait/family_portrait.jpg`,
     description: "Shoot at place of your choice or I am happy to recommend somewhere you will love. beaches, grassy sea cliffs, jungle, or waterfalls.",
     whatIncluded: "What's Included:",
     includes: [
@@ -18,7 +19,7 @@
 
   const portraitData2 = {
   title: "Personal Shots",
-  mainImage: "/puameliaphoto_demo/images/pricing/portrait/personal_shot.jpg",
+  mainImage: `${base}/images/pricing/portrait/personal_shot.jpg`,
   description: "Experience a relaxed, on-location shoot that celebrates your authentic self through spontaneous, everyday moments. I create a comfortable environment that allows your personality to shine, resulting in a natural and engaging collection of images.",
   whatIncluded: "What's Included:",
   includes: [
@@ -32,7 +33,7 @@
 
 const portraitData3 = {
   title: "Pets",
-  mainImage: "/puameliaphoto_demo/images/pricing/portrait/pet.jpg",
+  mainImage: `${base}/images/pricing/portrait/pet.jpg`,
   description: "We love animals too. Let us make images that will make you smile for years.",
   whatIncluded: "What's Included:",
   includes: [

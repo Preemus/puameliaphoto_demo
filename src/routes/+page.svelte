@@ -228,7 +228,7 @@
         Organic Studio
       </p>
       <a
-        href="/gallery"
+        href="https://puamelia-photo.formaloo.co/0n7o7b"
         class="mt-6 bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-400 transition"
         style="font-family: 'Inter', sans-serif !important;"
       >

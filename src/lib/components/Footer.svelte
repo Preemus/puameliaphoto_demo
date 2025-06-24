@@ -27,7 +27,7 @@
   const contact = [
     {
       icon: `${base}/images/mail.png`,
-      text: "Email",
+      text: "deaconmacmillan@puameliaphoto.com",
       href: "mailto:deaconmacmillan@puameliaphoto.com",
     },
     {
@@ -43,7 +43,7 @@
 >
   <!-- Mobile-first grid layout -->
   <div
-    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-x-4 gap-y-8 text-sm"
+    class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-6 gap-x-4 gap-y-8 text-sm"
   >
     <!-- TOP ROW (Mobile): Logo + Thank You + Social -->
     <div class="col-span-1 md:col-span-2 order-1 flex flex-col items-start">
@@ -110,7 +110,7 @@
             <img src={item.icon} alt="" class="w-5 h-5 contact-icon" />
             <a 
               href={item.href} 
-              class="text-white hover:text-yellow-200"
+              class="text-white hover:text-yellow-200 break-all"
               target="_blank"
               rel="noopener noreferrer"
               >{item.text}</a
@@ -153,7 +153,7 @@
     </div>
 
     <!-- Contact (Desktop) -->
-    <div class="hidden md:block md:col-span-1 order-6">
+    <div class="hidden md:block md:col-span-2 order-6">
       <h2 class="font-semibold mb-2 text-[#fbf2d0]">Contact</h2>
       <ul class="space-y-2">
         {#each contact as item}
@@ -161,7 +161,7 @@
             <img src={item.icon} alt="" class="w-5 h-5 contact-icon" />
             <a 
               href={item.href} 
-              class="text-white hover:text-yellow-200"
+              class="text-white hover:text-yellow-200 break-all"
               target="_blank"
               rel="noopener noreferrer"
               >{item.text}</a

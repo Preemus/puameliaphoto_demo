@@ -1,9 +1,10 @@
 <script>
+    import { base } from '$app/paths';
     import ParallaxBanner from '$lib/components/ParallaxBanner.svelte';
   </script>
   
   <ParallaxBanner 
-    imageUrl="/images/pricing/tour/tour_top.jpg"
+    imageUrl="{base}/images/pricing/tour/tour_top.jpg"
     text="Product"
     height="60vh"
   />

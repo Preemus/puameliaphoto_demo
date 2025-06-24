@@ -1,10 +1,11 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import ContentSection from '$lib/components/ContentSection.svelte';
   
     // Portrait data
     const portraitData = {
       title: "Canyons",
-      mainImage: "/puameliaphoto_demo/images/pricing/drone/drone_image1.jpg",
+      mainImage: `${base}/images/pricing/drone/drone_image1.jpg`,
       description: "Bring your wet-suit and a lunch, this may go long. I'll shoot your canyon adventure here on Maui we can collaborate to find the perfect canyon for you.",
       whatIncluded: "What's Included:",
       includes: [
@@ -18,7 +19,7 @@
 
     const portraitData2 = {
       title: "Short Canyon",
-      mainImage: "/puameliaphoto_demo/images/pricing/drone/drone_image2.jpg",
+      mainImage: `${base}/images/pricing/drone/drone_image2.jpg`,
       description: "Easier route, smaller scale. You will make it on time to your dinner reservation.",
       whatIncluded: "What's Included:",
       includes: [
