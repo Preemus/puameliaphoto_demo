@@ -3,6 +3,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { fade } from "svelte/transition";
+  import { base } from "$app/paths";
 
   let currentIndex = 0;
   let visibleIndex = 0;
@@ -16,11 +17,11 @@
   let videoElement: HTMLVideoElement | null = null;
 
   const backgrounds = [
-    "/puameliaphoto_demo/images/top.jpg",
-    "/puameliaphoto_demo/images/homepage/bird.JPG",
-    "/puameliaphoto_demo/video/homepage/homepage_video.mp4",
-    "/puameliaphoto_demo/images/homepage/better_sky.jpg",
-    "/puameliaphoto_demo/images/homepage/puamelia_beach.jpg",
+    `${base}/images/top.jpg`,
+    `${base}/images/homepage/bird.JPG`,
+    `${base}/video/homepage/homepage_video.mp4`,
+    `${base}/images/homepage/better_sky.jpg`,
+    `${base}/images/homepage/puamelia_beach.jpg`,
   ];
 
   const isVideo = (path: string) => {
@@ -363,14 +364,14 @@
 
       <div class="connected-film-grid">
         {#each [
-        { img: "/puameliaphoto_demo/images/homepage/hp_portrait.JPG", title: "Portrait", text: "Heart felt pictures of you and your crew", href: "/pricing/portrait" }, 
-        { img: "/puameliaphoto_demo/images/homepage/3-2hp_ocean.jpg", title: "Ocean", text: "I am at least semi aquatic. portraits underwater blue water or near the shore.", href: "/pricing/ocean" }, 
-        { img: "/puameliaphoto_demo/images/homepage/3-2hp_drone.jpg", title: "Drone", text: "Mapping and stitching services available for large areas", href: "/pricing/drone" }, 
-        { img: "/puameliaphoto_demo/images/homepage/3-2hp_product.jpg", title: "Product", text: "Showcase your work for promotion", href: "/pricing/product" }, 
-        { img: "/puameliaphoto_demo/images/homepage/hp_event.JPG", title: "Event", text: "Parties, once in a life time events, memorials, and performances", href: "/pricing/event" }, 
-        { img: "/puameliaphoto_demo/images/homepage/hp_wedding.jpg", title: "Wedding", text: "I hate weddings but if you want to pay me to do it anyway I'm going to charge you a lot", href: "/pricing/wedding" }, 
-        { img: "/puameliaphoto_demo/images/homepage/hp_canyoning.jpg", title: "Canyoning", text: "Adventure and photo experience only Maui canyons can offer", href: "/pricing/canyoning" }, 
-        { img: "/puameliaphoto_demo/images/homepage/3-2hp_tour.JPG", title: "Photo Tour", text: "Ive found some lovely places and we can go shoot there", href: "/pricing/tour" }
+        { img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heart felt pictures of you and your crew", href: `${base}/pricing/portrait` }, 
+        { img: `${base}/images/homepage/3-2hp_ocean.jpg`, title: "Ocean", text: "I am at least semi aquatic. portraits underwater blue water or near the shore.", href: `${base}/pricing/ocean` }, 
+        { img: `${base}/images/homepage/3-2hp_drone.jpg`, title: "Drone", text: "Mapping and stitching services available for large areas", href: `${base}/pricing/drone` }, 
+        { img: `${base}/images/homepage/3-2hp_product.jpg`, title: "Product", text: "Showcase your work for promotion", href: `${base}/pricing/product` }, 
+        { img: `${base}/images/homepage/hp_event.JPG`, title: "Event", text: "Parties, once in a life time events, memorials, and performances", href: `${base}/pricing/event` }, 
+        { img: `${base}/images/homepage/hp_wedding.jpg`, title: "Wedding", text: "I hate weddings but if you want to pay me to do it anyway I'm going to charge you a lot", href: `${base}/pricing/wedding` }, 
+        { img: `${base}/images/homepage/hp_canyoning.jpg`, title: "Canyoning", text: "Adventure and photo experience only Maui canyons can offer", href: `${base}/pricing/canyoning` }, 
+        { img: `${base}/images/homepage/3-2hp_tour.JPG`, title: "Photo Tour", text: "Ive found some lovely places and we can go shoot there", href: `${base}/pricing/tour` }
         ] as service, i}
           <div class="film-strip-card">
             <a href={service.href} class="block w-full h-full">
@@ -410,7 +411,7 @@
             class="w-full max-w-sm aspect-[3/2.5] relative overflow-hidden rounded-md shadow-lg border border-white/10 bg-black/20"
           >
             <img
-              src="/puameliaphoto_demo/images/about/ab_deacon.jpg"
+              src="{base}/images/about/ab_deacon.jpg"
               alt="Deacon MacMillan"
               class="absolute inset-0 w-full h-full object-cover"
             />
@@ -455,7 +456,7 @@
           class="w-full max-w-sm aspect-[3/2.5] relative overflow-hidden rounded-md shadow-lg border border-white/10 bg-black/20"
         >
           <img
-            src="/puameliaphoto_demo/images/about/ab_deacon.jpg"
+            src="{base}/images/about/ab_deacon.jpg"
             alt="Deacon MacMillan"
             class="absolute inset-0 w-full h-full object-cover"
           />

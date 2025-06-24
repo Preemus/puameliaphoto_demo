@@ -1,13 +1,15 @@
+
 <script lang="ts">
+  import { base } from "$app/paths";
   const pricings = [
-    { name: "Portrait", href: "/pricing/portrait" },
-    { name: "Ocean", href: "/pricing/ocean" },
-    { name: "Drone", href: "/pricing/drone" },
-    { name: "Product", href: "/pricing/product" },
-    { name: "Event", href: "/pricing/event" },
-    { name: "Wedding", href: "/pricing/wedding" },
-    { name: "Canyoning", href: "/pricing/canyoning" },
-    { name: "Photo Tour", href: "/pricing/tour" },
+    { name: "Portrait", href: `${base}/pricing/portrait` },
+    { name: "Ocean", href: `${base}/pricing/ocean` },
+    { name: "Drone", href: `${base}/pricing/drone` },
+    { name: "Product", href: `${base}/pricing/product` },
+    { name: "Event", href: `${base}/pricing/event` },
+    { name: "Wedding", href: `${base}/pricing/wedding` },
+    { name: "Canyoning", href: `${base}/pricing/canyoning` },
+    { name: "Photo Tour", href: `${base}/pricing/tour` },
   ];
 
   const resources = [
@@ -24,12 +26,12 @@
 
   const contact = [
     {
-      icon: "/puameliaphoto_demo/images/mail.png",
+      icon: `${base}/images/mail.png`,
       text: "Email",
       href: "mailto:deaconmacmillan@puameliaphoto.com",
     },
     {
-      icon: "/puameliaphoto_demo/images/phone-call.png",
+      icon: `${base}/images/phone-call.png`,
       text: "+1 808-250-2198",
       href: "tel:+18082502198",
     },
@@ -45,7 +47,7 @@
   >
     <!-- TOP ROW (Mobile): Logo + Thank You + Social -->
     <div class="col-span-1 md:col-span-2 order-1 flex flex-col items-start">
-      <img src="/puameliaphoto_demo/images/logo.png" alt="Logo" class="w-50 mb-4" />
+      <img src="{base}/images/logo.png" alt="Logo" class="w-50 mb-4" />
       <p class="text-sm text-white">
         Thank you so much for considering our services.
       </p>
@@ -58,7 +60,7 @@
           rel="noopener noreferrer"
           aria-label="Follow us on Instagram"
         >
-          <img src="/puameliaphoto_demo/images/instagram.png" alt="" class="w-7 h-7 social-icon" />
+          <img src="{base}/images/instagram.png" alt="" class="w-7 h-7 social-icon" />
         </a>
         
       </div>

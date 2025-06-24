@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { pricingOptions } from "$lib/data/pricing";
+  import { base } from "$app/paths";
 
   let isScrolled = false;
   let isPricingDropdownOpen = false;
@@ -90,7 +91,7 @@
   <nav
     class="w-full mx-auto flex justify-between items-center px-4 py-2 relative"
   >
-    <a href="/" class="text-lg font-bold">Puamelia Photo</a>
+    <a href="{base}/" class="text-lg font-bold">Puamelia Photo</a>
 
     <button
       class="hamburger md:hidden text-2xl focus:outline-none font-bold"
@@ -100,8 +101,8 @@
     </button>
 
     <div class="hidden md:flex gap-4 items-center">
-      <a href="/" class="hover:text-gray-300 font-bold">Home</a>
-      <a href="/#about" class="hover:text-gray-300 font-bold">About</a>
+      <a href="{base}/" class="hover:text-gray-300 font-bold">Home</a>
+      <a href="{base}/#about" class="hover:text-gray-300 font-bold">About</a>
 
       <!-- Fix for the pricing dropdown container -->
       <div
@@ -163,12 +164,12 @@
         class="mobile-menu absolute top-14 right-4 w-48 bg-gray-900 rounded-lg shadow-lg flex flex-col md:hidden z-50"
       >
         <a
-          href="/"
+          href="{base}/"
           class="block px-4 py-2 text-gray-200 hover:bg-gray-700 font-bold"
           >Home</a
         >
         <a
-          href="/#about"
+          href="{base}/#about"
           class="block px-4 py-2 text-gray-200 hover:bg-gray-700 font-bold"
           >About</a
         >
