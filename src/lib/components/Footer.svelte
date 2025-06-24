@@ -24,12 +24,12 @@
 
   const contact = [
     {
-      icon: "/images/mail.png",
+      icon: "/puameliaphoto_demo/images/mail.png",
       text: "Email",
       href: "mailto:deaconmacmillan@puameliaphoto.com",
     },
     {
-      icon: "/images/phone-call.png",
+      icon: "/puameliaphoto_demo/images/phone-call.png",
       text: "+1 808-250-2198",
       href: "tel:+18082502198",
     },
@@ -45,7 +45,7 @@
   >
     <!-- TOP ROW (Mobile): Logo + Thank You + Social -->
     <div class="col-span-1 md:col-span-2 order-1 flex flex-col items-start">
-      <img src="/images/logo.png" alt="Logo" class="w-50 mb-4" />
+      <img src="/puameliaphoto_demo/images/logo.png" alt="Logo" class="w-50 mb-4" />
       <p class="text-sm text-white">
         Thank you so much for considering our services.
       </p>
@@ -58,7 +58,7 @@
           rel="noopener noreferrer"
           aria-label="Follow us on Instagram"
         >
-          <img src="/images/instagram.png" alt="" class="w-7 h-7 social-icon" />
+          <img src="/puameliaphoto_demo/images/instagram.png" alt="" class="w-7 h-7 social-icon" />
         </a>
         
       </div>

@@ -4,7 +4,7 @@
     // Portrait data
     const portraitData = {
       title: "Surfing",
-      mainImage: "/images/pricing/ocean/surfing.jpg",
+      mainImage: "/puameliaphoto_demo/images/pricing/ocean/surfing.jpg",
       description: "Dynamic photos of you in your element.",
       whatIncluded: "What's Included:",
       includes: [
@@ -18,7 +18,7 @@
 
     const portraitData2 = {
       title: "Underwater",
-      mainImage: "/images/pricing/ocean/underwater.jpg",
+      mainImage: "/puameliaphoto_demo/images/pricing/ocean/underwater.jpg",
       description: "Immerse yourself in a breathtaking underwater session that captures the magic of the ocean from below the surface. Whether you're free diving, swimming, or simply floating in the currents, I’ll document the beauty of weightlessness and the vibrant marine world around you.",
       whatIncluded: "What's Included:",
       includes: [

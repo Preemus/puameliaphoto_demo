@@ -3,7 +3,7 @@
   import { onMount } from 'svelte';
 
   export let title: string;
-  export let dividerImage = '/images/line.png';
+  export let dividerImage = '/puameliaphoto_demo/images/line.png';
   export let mainImage: string;
   export let description: string;
   export let whatIncluded: string;

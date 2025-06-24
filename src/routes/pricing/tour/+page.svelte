@@ -10,12 +10,12 @@
   
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {#each [
-          { img: "/images/pricing/tour/tour_image1.jpg", title: "High elevation starlight"},
-          { img: "/images/pricing/tour/tour_image2.jpg", title: "The path less taken"},
-          { img: "/images/pricing/tour/tour_image3.jpg", title: "Secret spots"},
-          { img: "/images/pricing/tour/tour_image4.jpg", title: "Seasonal marine mammal"},
-          { img: "/images/pricing/tour/tour_image5.JPG", title: "Native birds"},
-          { img: "/images/pricing/tour/tour_image6.JPG", title: "Crater hike"},
+          { img: "/puameliaphoto_demo/images/pricing/tour/tour_image1.jpg", title: "High elevation starlight"},
+          { img: "/puameliaphoto_demo/images/pricing/tour/tour_image2.jpg", title: "The path less taken"},
+          { img: "/puameliaphoto_demo/images/pricing/tour/tour_image3.jpg", title: "Secret spots"},
+          { img: "/puameliaphoto_demo/images/pricing/tour/tour_image4.jpg", title: "Seasonal marine mammal"},
+          { img: "/puameliaphoto_demo/images/pricing/tour/tour_image5.JPG", title: "Native birds"},
+          { img: "/puameliaphoto_demo/images/pricing/tour/tour_image6.JPG", title: "Crater hike"},
         ] as service}
           <div class="flex flex-col items-center text-center">
               <div class="w-full h-64 bg-gray-200 rounded-md overflow-hidden">
