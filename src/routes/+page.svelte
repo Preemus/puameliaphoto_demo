@@ -108,6 +108,38 @@
     }
   };
 
+  function setSectionStyles() {
+    const isMobile = window.innerWidth < 768; // Common mobile breakpoint
+
+    sections.forEach((section) => {
+      if (!section.classList.contains("homepage-last-section")) {
+        (section as HTMLElement).style.minHeight =
+          `calc(100vh - ${headerHeight}px)`;
+      }
+      
+      const dataIndex = (section as HTMLElement).getAttribute('data-index');
+      let marginBottomValue = '0px';
+
+      if (dataIndex === '1') {
+        marginBottomValue = '0px';
+        (section as HTMLElement).style.height = 'auto';
+        (section as HTMLElement).style.minHeight = '70vh';
+      } else if (dataIndex === '3') {
+        marginBottomValue = '100px';
+      } else if (dataIndex === '4') {
+        marginBottomValue = '400px';
+      }
+
+      if (isMobile) {
+        // On mobile, use setProperty with !important to override CSS
+        (section as HTMLElement).style.setProperty('margin-bottom', marginBottomValue, 'important');
+      } else {
+        // On desktop, use the standard style property
+        (section as HTMLElement).style.marginBottom = marginBottomValue;
+      }
+    });
+  }
+
   onMount(() => {
     setTimeout(() => {
       const header = document.querySelector("header");
@@ -124,14 +156,7 @@
         document.querySelectorAll(".scroll-section, .homepage-last-section"),
       );
 
-      sections.forEach((section) => {
-        if (!section.classList.contains("homepage-last-section")) {
-          (section as HTMLElement).style.minHeight =
-            `calc(100vh - ${headerHeight}px)`;
-        }
-        (section as HTMLElement).style.marginBottom = `${footerHeight}px`;
-      });
-
+      setSectionStyles();
       handleScroll();
     }, 100);
 
@@ -162,6 +187,11 @@
     window.addEventListener("scroll", throttledScroll, { passive: true });
 
     const handleResize = () => {
+      const header = document.querySelector("header");
+      const footer = document.querySelector("footer");
+      if (header) headerHeight = header.clientHeight;
+      if (footer) footerHeight = footer.clientHeight;
+      setSectionStyles();
       setTimeout(handleScroll, 100);
     };
     window.addEventListener("resize", handleResize);
@@ -277,10 +307,6 @@
           We specialise in genuine expression, expressive light and breathtaking locations.
         </p>
       </div>
-
-      <div class="w-full md:w-1/2">
-        <!-- Intentionally empty -->
-      </div>
     </div>
   </div>
 </section>
@@ -354,7 +380,7 @@
   <div class="content-wrapper relative">
     <div class="container mx-auto px-4 py-12">
       <div class="text-center mb-2">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 mt-20">
           <span> Choose Your Adventure </span>
         </h2>
         <div class="flex justify-center mt-6">
@@ -641,14 +667,13 @@
     width: 100%;
     padding-top: var(--header-height, 0px);
     height: 100vh;
+    margin-bottom: 0 !important;
   }
 
   .content-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: calc(
-      100vh - var(--header-height, 0px) - var(--footer-height, 0px)
-    );
+    min-height: calc(100vh - var(--header-height, 0px));
     justify-content: center;
   }
 
