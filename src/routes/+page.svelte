@@ -498,7 +498,7 @@
 
   .scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: calc(30px + env(safe-area-inset-bottom));
     display: flex;
     flex-direction: column;
     align-items: center;
