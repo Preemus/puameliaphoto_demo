@@ -12,7 +12,7 @@
         "Action-packed photography",
         "Safety consultation & itinerary planning"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $3,000"
     };
 
@@ -26,7 +26,7 @@
         "Emphasis on candid action shots",
         "Customized route guidance"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $1,500"
     };
   

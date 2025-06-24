@@ -6,7 +6,7 @@
   let isPricingDropdownOpen = false;
   let isMenuOpen = false;
   let clickedPricing = false;
-  let hoverTimeout: ReturnType<typeof setTimeout>; // Use the correct return type
+  let hoverTimeout: ReturnType<typeof setTimeout>;
 
   const handleScroll = () => {
     isScrolled = window.scrollY > 20;
@@ -149,7 +149,9 @@
       </div>
 
       <a
-        href="/reserve"
+        href="https://puamelia-photo.formaloo.co/0n7o7b"
+        target="_blank"
+        rel="noopener noreferrer"
         class="hover:text-gray-800 font-bold px-6 py-1.5 bg-white/40 text-white rounded-lg hover:bg-white transition"
       >
         Reserve
@@ -198,7 +200,9 @@
         </div>
 
         <a
-          href="/reserve"
+          href="https://puamelia-photo.formaloo.co/0n7o7b"
+          target="_blank"
+          rel="noopener noreferrer"
           class="block px-4 py-2 text-white hover:text-gray-800 hover:bg-white font-bold bg-white/40 rounded-lg mx-2 mb-2 text-center"
         >
           Reserve
@@ -215,6 +219,7 @@
   .hamburger {
     cursor: pointer;
   }
+
   /* Animation for dropdown arrow */
   span {
     transition: transform 0.2s ease;

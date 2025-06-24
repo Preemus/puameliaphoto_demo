@@ -12,7 +12,7 @@
       "Mornings or evening",
       "Fast turnaround with cloud delivery"
     ],
-    bookingLink: "https://your-google-form.com",
+    bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
     priceText: "Starting at $400"
   };
 
@@ -26,7 +26,7 @@
     "100 fully edited images",
     "Fast turnaround with cloud delivery",
   ],
-  bookingLink: "https://your-google-form.com",
+  bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
   priceText: "Starting at $300"
 }
 
@@ -40,7 +40,7 @@ const portraitData3 = {
     "Some photos!",
     "Two day turnaround with cloud delivery",
   ],
-  bookingLink: "https://your-google-form.com",
+  bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
   priceText: "Starting at $500"
 }
 

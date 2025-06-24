@@ -12,7 +12,7 @@
         "Pre-event consultation",
         "Digital gallery of high-resolution images"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $4,000"
     };
 
@@ -27,7 +27,7 @@
         "Emphasis on key moments and guest interactions",
         "Quick digital delivery"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $2,000"
     };
 
@@ -41,7 +41,7 @@
         "Edited highlight reel",
         "Rapid digital turnaround"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $500"
     };
   

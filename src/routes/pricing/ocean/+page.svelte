@@ -12,7 +12,7 @@
         "Action shots from water, shore, and air.",
         "Fast turnaround with cloud delivery"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $300"
     };
 
@@ -27,7 +27,7 @@
         "Guidance on poses and breath control",
         "Fast turnaround with cloud delivery"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $400"
     };
   

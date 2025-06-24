@@ -86,7 +86,11 @@
         <ul class="space-y-1">
           {#each resources as resource}
             <li class="list-none">
-              <a href={resource.href} class="text-white hover:text-yellow-200"
+              <a 
+                href={resource.href} 
+                class="text-white hover:text-yellow-200"
+                target="_blank"
+                rel="noopener noreferrer"
                 >{resource.name}</a
               >
             </li>
@@ -102,7 +106,11 @@
         {#each contact as item}
           <li class="flex items-center gap-2">
             <img src={item.icon} alt="" class="w-5 h-5 contact-icon" />
-            <a href={item.href} class="text-white hover:text-yellow-200"
+            <a 
+              href={item.href} 
+              class="text-white hover:text-yellow-200"
+              target="_blank"
+              rel="noopener noreferrer"
               >{item.text}</a
             >
           </li>
@@ -110,7 +118,6 @@
       </ul>
     </div>
 
-    <!-- DESKTOP LAYOUT (hidden on mobile) - No changes here -->
     <!-- Services & Pricing (Desktop) -->
     <div class="hidden md:block md:col-span-1 order-4">
       <h2 class="font-semibold mb-2 text-[#fbf2d0]">Services & Pricing</h2>
@@ -131,7 +138,11 @@
       <ul class="space-y-1">
         {#each resources as resource}
           <li class="list-none">
-            <a href={resource.href} class="text-white hover:text-yellow-200"
+            <a 
+              href={resource.href} 
+              class="text-white hover:text-yellow-200"
+              target="_blank"
+              rel="noopener noreferrer"
               >{resource.name}</a
             >
           </li>
@@ -146,7 +157,11 @@
         {#each contact as item}
           <li class="flex items-start gap-2">
             <img src={item.icon} alt="" class="w-5 h-5 contact-icon" />
-            <a href={item.href} class="text-white hover:text-yellow-200"
+            <a 
+              href={item.href} 
+              class="text-white hover:text-yellow-200"
+              target="_blank"
+              rel="noopener noreferrer"
               >{item.text}</a
             >
           </li>
@@ -169,6 +184,6 @@
   }
 
   .contact-icon {
-    filter: brightness(0) invert(1); /* This makes any icon white */
+    filter: brightness(0) invert(1); /* This makes icon white */
   }
 </style>

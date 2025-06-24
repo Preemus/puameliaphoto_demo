@@ -20,7 +20,6 @@ afterNavigate(({ to, from }) => {
       }
       
       if (target) {
-        // Adjust scroll to account for fixed header if needed
         const headerHeight = document.querySelector('header')?.offsetHeight || 0;
         const elementPosition = target.getBoundingClientRect().top + window.scrollY;
         
@@ -31,7 +30,7 @@ afterNavigate(({ to, from }) => {
       } else {
         console.warn(`Element not found: ${to.url.hash}`);
       }
-    }, 100); // Longer timeout for more reliability
+    }, 100);
   }
   // Only scroll to top for non-hash navigation and non-homepage routes
   else if (to && to.url.pathname !== '/') {

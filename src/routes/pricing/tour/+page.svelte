@@ -12,7 +12,7 @@
         {#each [
           { img: "/images/pricing/tour/tour_image1.jpg", title: "High elevation starlight"},
           { img: "/images/pricing/tour/tour_image2.jpg", title: "The path less taken"},
-          { img: "/images/pricing/tour/tour_image3.jpg", title: "---"},
+          { img: "/images/pricing/tour/tour_image3.jpg", title: "Secret spots"},
           { img: "/images/pricing/tour/tour_image4.jpg", title: "Seasonal marine mammal"},
           { img: "/images/pricing/tour/tour_image5.JPG", title: "Native birds"},
           { img: "/images/pricing/tour/tour_image6.JPG", title: "Crater hike"},
@@ -28,7 +28,7 @@
 
   </div>
 
-  <h2 class="text-1xl text-center mb-8 my-8">Flexible Pricing by piece or by project
+  <h2 class="text-1xl text-center mb-8 my-8">We are working on this plan. Please check back later!
 
   </h2>
   

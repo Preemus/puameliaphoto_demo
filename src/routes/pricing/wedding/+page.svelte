@@ -12,7 +12,7 @@
         "Giant folder of images some of which will actually be good... probably, I don't know.",
         "Evidence of your agreement with the state to legitimize who gets your shit if you die suddenly and haven't made a will."
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $2,000"
     };
 
@@ -25,7 +25,7 @@
         "Location guidance and advice",
         "Hiking buddy to bring champagne"
       ],
-      bookingLink: "https://your-google-form.com",
+      bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
       priceText: "Starting at $300"
     };
   

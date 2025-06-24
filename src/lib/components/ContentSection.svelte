@@ -78,11 +78,12 @@
   {/if}
 
   <!-- Booking Button -->
-  <!-- Booking Button - Minimalist Outline Style -->
 <a
   href={bookingLink}
   class="mt-6 px-4 py-2 border-1 border-black text-black rounded-lg 
         bg-transparent hover:shadow-md transition-all duration-300"
+  target="_blank"
+  rel="noopener noreferrer"
 >
   {priceText}
 </a>
