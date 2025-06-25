@@ -5,7 +5,7 @@
   
   <ParallaxBanner 
     imageUrl="{base}/images/pricing/tour/tour_top.jpg"
-    text="Product"
+    text="Photo Tours"
     height="60vh"
   />
   

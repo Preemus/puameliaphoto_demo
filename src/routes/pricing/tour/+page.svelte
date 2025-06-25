@@ -6,7 +6,7 @@
 
 <section class="py-12 fff4d4">
   <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Commercial</h2>
+      <h2 class="text-3xl font-bold text-center mb-8">Available Options</h2>
       <!-- Thin Line Image -->
       <img src={dividerImage} alt="Divider Line" class="w-full h-6 mb-6">
   
