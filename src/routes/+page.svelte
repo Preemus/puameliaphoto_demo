@@ -390,7 +390,7 @@
 
       <div class="connected-film-grid">
         {#each [
-        { img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heart felt pictures of you and your crew", href: `${base}/pricing/portrait` }, 
+        { img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heartfelt pictures of you and your crew", href: `${base}/pricing/portrait` }, 
         { img: `${base}/images/homepage/3-2hp_ocean.jpg`, title: "Ocean", text: "I am at least semi aquatic. portraits underwater blue water or near the shore.", href: `${base}/pricing/ocean` }, 
         { img: `${base}/images/homepage/3-2hp_drone.jpg`, title: "Drone", text: "Mapping and stitching services available for large areas", href: `${base}/pricing/drone` }, 
         { img: `${base}/images/homepage/3-2hp_product.jpg`, title: "Product", text: "Showcase your work for promotion", href: `${base}/pricing/product` }, 
