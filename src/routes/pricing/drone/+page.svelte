@@ -30,14 +30,13 @@
     //   bookingLink: "https://puamelia-photo.formaloo.co/0n7o7b",
     //   priceText: "Starting at $1,500"
     // };
-  
 </script>
 
-<section style="padding: 10rem; text-align: center;">
-  <h2>Drone plan is work in progress, please check back later!</h2>
+  
+  <section style="py-12 fff4d4">
+  <h2 class="text-1xl text-center mt-42 mb-42 my-8">We are working on this plan. Please check back later!
+  </h2>
 </section>
-  
-  
   
   
 <!--   
