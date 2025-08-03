@@ -16,13 +16,33 @@
   let transitionProgress = 0;
   let videoElement: HTMLVideoElement | null = null;
 
-  const backgrounds = [
+  let backgrounds = [
     `${base}/images/top.jpg`,
     `${base}/images/homepage/bird.JPG`,
     `${base}/video/homepage/homepage_video.mp4`,
     `${base}/images/homepage/better_sky.jpg`,
     `${base}/images/homepage/puamelia_beach.jpg`,
   ];
+
+  function updateBackgroundsForMobile() {
+    const isMobile = window.innerWidth < 768;
+    backgrounds = [
+      `${base}/images/top.jpg`,
+      isMobile
+        ? `${base}/images/homepage/bird_mobile_view.JPG`
+        : `${base}/images/homepage/bird.JPG`,
+      `${base}/video/homepage/homepage_video.mp4`,
+      `${base}/images/homepage/better_sky.jpg`,
+      `${base}/images/homepage/puamelia_beach.jpg`,
+    ];
+  }
+
+  onMount(() => {
+    updateBackgroundsForMobile();
+    window.addEventListener("resize", updateBackgroundsForMobile);
+    return () =>
+      window.removeEventListener("resize", updateBackgroundsForMobile);
+  });
 
   const isVideo = (path: string) => {
     return (
@@ -42,7 +62,9 @@
 
     // Set up new video tracking if needed
     if (isVideo(backgrounds[newIndex])) {
-      videoElement = document.querySelector(`video[src="${backgrounds[newIndex]}"]`);
+      videoElement = document.querySelector(
+        `video[src="${backgrounds[newIndex]}"]`,
+      );
       if (videoElement) {
         videoElement.ontimeupdate = handleVideoTimeUpdate;
       }
@@ -57,22 +79,24 @@
 
   const handleVideoTimeUpdate = () => {
     if (!videoElement) return;
-    
+
     const currentTime = videoElement.currentTime;
     const segmentDuration = 5; // seconds per text
     const totalSegments = 4; // number of text items
 
     // Determine the index of the currently active text segment (0, 1, or 2)
     // This index changes cleanly every 5 seconds.
-    const currentSegmentIndex = Math.floor(currentTime / segmentDuration) % totalSegments;
-    
+    const currentSegmentIndex =
+      Math.floor(currentTime / segmentDuration) % totalSegments;
+
     // Determine the progress (from 0 to 1) within the current 5-second segment.
-    const progressInCurrentSegment = (currentTime % segmentDuration) / segmentDuration;
-    
+    const progressInCurrentSegment =
+      (currentTime % segmentDuration) / segmentDuration;
+
     // Update the Svelte reactive variables that the template uses.
     // activeTextIndex will now directly correspond to the item that should be prominent.
     activeTextIndex = currentSegmentIndex;
-    // transitionProgress will represent the animation progress for that active item 
+    // transitionProgress will represent the animation progress for that active item
     // (and correspondingly for inactive items based on the template logic).
     transitionProgress = progressInCurrentSegment;
   };
@@ -116,23 +140,27 @@
         (section as HTMLElement).style.minHeight =
           `calc(100vh - ${headerHeight}px)`;
       }
-      
-      const dataIndex = (section as HTMLElement).getAttribute('data-index');
-      let marginBottomValue = '0px';
 
-      if (dataIndex === '1') {
-        marginBottomValue = '0px';
-        (section as HTMLElement).style.height = 'auto';
-        (section as HTMLElement).style.minHeight = '70vh';
-      } else if (dataIndex === '3') {
-        marginBottomValue = '100px';
-      } else if (dataIndex === '4') {
-        marginBottomValue = '400px';
+      const dataIndex = (section as HTMLElement).getAttribute("data-index");
+      let marginBottomValue = "0px";
+
+      if (dataIndex === "1") {
+        marginBottomValue = "0px";
+        (section as HTMLElement).style.height = "auto";
+        (section as HTMLElement).style.minHeight = "70vh";
+      } else if (dataIndex === "3") {
+        marginBottomValue = "100px";
+      } else if (dataIndex === "4") {
+        marginBottomValue = "400px";
       }
 
       if (isMobile) {
         // On mobile, use setProperty with !important to override CSS
-        (section as HTMLElement).style.setProperty('margin-bottom', marginBottomValue, 'important');
+        (section as HTMLElement).style.setProperty(
+          "margin-bottom",
+          marginBottomValue,
+          "important",
+        );
       } else {
         // On desktop, use the standard style property
         (section as HTMLElement).style.marginBottom = marginBottomValue;
@@ -234,7 +262,13 @@
         ? 'current-bg'
         : 'previous-bg'}"
       style="background-image: url('{bg}')"
-    ></div>
+    >
+      {#if i === visibleIndex && bg.endsWith("/bird_mobile_view.JPG")}
+        <div
+          style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.28); z-index: -1; transition: opacity 0.8s ease; pointer-events: none;"
+        ></div>
+      {/if}
+    </div>
   {/if}
 {/each}
 
@@ -298,25 +332,29 @@
         >
           Welcome!
         </h2>
-        
+
         <p
           class="text-lg text-white mt-4"
           style="font-family: 'Inter', sans-serif !important;"
         >
-          Pua Melia Photo is a family operated photo and video studio on the north shore of Maui.
-          We specialise in genuine expression, expressive light and breathtaking locations.
+          Pua Melia Photo is a family operated photo and video studio on the
+          north shore of Maui. We specialise in genuine expression, expressive
+          light and breathtaking locations.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="scroll-section relative h-screen overflow-hidden" data-index="2">
+<section
+  class="scroll-section relative h-screen overflow-hidden"
+  data-index="2"
+>
   <div
     class="content-wrapper flex justify-center items-center h-full relative z-10 max-w-screen-xl mx-auto"
   >
     <div
-      class="text-right-override w-full max-w-screen-xl mx-auto px-6 md:px-10"
+      class="w-full mx-auto px-4 md:px-10 max-w-md md:max-w-screen-xl text-center md:text-left text-right-override"
     >
       <h2
         class="text-3xl md:text-5xl font-extrabold text-white drop-shadow-lg tracking-wide"
@@ -325,29 +363,33 @@
         <span class="block text-right">VIDEOGRAPHY</span>
       </h2>
 
-            <div class="ml-auto max-w-lg">
+      <div class="ml-auto max-w-lg">
         <hr class="border-t-2 border-yellow-500 w-24 my-4 ml-auto" />
 
         <ul class="text-white space-y-2 text-right">
-          {#each ['Commercial Photography', 'Drone photography', 'Canyoning and rappeling', 'Event photography'] as text, i}
+          {#each ["Commercial Photography", "Drone photography", "Canyoning and rappeling", "Event photography"] as text, i}
             {@const radius = 8}
             {@const circumference = 2 * Math.PI * radius}
             <li class="flex items-center justify-end gap-2">
-              <span 
-                class="transition-all duration-500" 
-                style:font-size={activeTextIndex === i ? '1.6rem' : '1rem'}
+              <span
+                class="transition-all duration-500"
+                style:font-size={activeTextIndex === i ? "1.6rem" : "1rem"}
               >
                 {text}
               </span>
               {#if activeTextIndex === i}
-                <svg class="w-5 h-5 transform -rotate-90" viewBox="0 0 20 20" aria-hidden="true">
+                <svg
+                  class="w-5 h-5 transform -rotate-90"
+                  viewBox="0 0 20 20"
+                  aria-hidden="true"
+                >
                   <circle
                     cx="10"
                     cy="10"
                     r={radius}
                     fill="transparent"
                     stroke-width="2"
-                    class="stroke-gray-500" 
+                    class="stroke-gray-500"
                   ></circle>
                   <circle
                     cx="10"
@@ -356,20 +398,24 @@
                     fill="transparent"
                     stroke-width="2"
                     stroke-linecap="round"
-                    class="stroke-yellow-500 progress-indicator-circle" 
+                    class="stroke-yellow-500 progress-indicator-circle"
                     style:stroke-dasharray={circumference}
-                    style:stroke-dashoffset={circumference * (1 - transitionProgress)}
+                    style:stroke-dashoffset={circumference *
+                      (1 - transitionProgress)}
                   ></circle>
                 </svg>
               {:else}
-                <div class="w-5 h-5"></div> <!-- Placeholder to maintain layout -->
+                <div class="w-5 h-5"></div>
+                <!-- Placeholder to maintain layout -->
               {/if}
             </li>
           {/each}
         </ul>
 
         <p class="text-white/90 text-1xl mt-6 italic">
-          "We are the ducks of the photo world. Equally comfortable in the air on the ground or in the water. If you need photos on rappel we got you."
+          "We are the ducks of the photo world. Equally comfortable in the air
+          on the ground or in the water. If you need photos on rappel we got
+          you."
         </p>
       </div>
     </div>
@@ -389,16 +435,7 @@
       </div>
 
       <div class="connected-film-grid">
-        {#each [
-        { img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heartfelt pictures of you and your crew", href: `${base}/pricing/portrait` }, 
-        { img: `${base}/images/homepage/3-2hp_ocean.jpg`, title: "Ocean", text: "I am at least semi aquatic. portraits underwater blue water or near the shore.", href: `${base}/pricing/ocean` }, 
-        { img: `${base}/images/homepage/3-2hp_drone.jpg`, title: "Drone", text: "Mapping and stitching services available for large areas", href: `${base}/pricing/drone` }, 
-        { img: `${base}/images/homepage/3-2hp_product.jpg`, title: "Product", text: "Showcase your work for promotion", href: `${base}/pricing/product` }, 
-        { img: `${base}/images/homepage/hp_event.JPG`, title: "Event", text: "Parties, once in a life time events, memorials, and performances", href: `${base}/pricing/event` }, 
-        { img: `${base}/images/homepage/hp_wedding.jpg`, title: "Wedding", text: "I hate weddings but if you want to pay me to do it anyway I'm going to charge you a lot", href: `${base}/pricing/wedding` }, 
-        { img: `${base}/images/homepage/hp_canyoning.jpg`, title: "Canyoning", text: "Adventure and photo experience only Maui canyons can offer", href: `${base}/pricing/canyoning` }, 
-        { img: `${base}/images/homepage/3-2hp_tour.JPG`, title: "Photo Tour", text: "Ive found some lovely places and we can go shoot there", href: `${base}/pricing/tour` }
-        ] as service, i}
+        {#each [{ img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heartfelt pictures of you and your crew", href: `${base}/pricing/portrait` }, { img: `${base}/images/homepage/3-2hp_ocean.jpg`, title: "Ocean", text: "I am at least semi aquatic. portraits underwater blue water or near the shore.", href: `${base}/pricing/ocean` }, { img: `${base}/images/homepage/3-2hp_drone.jpg`, title: "Drone", text: "Mapping and stitching services available for large areas", href: `${base}/pricing/drone` }, { img: `${base}/images/homepage/3-2hp_product.jpg`, title: "Product", text: "Showcase your work for promotion", href: `${base}/pricing/product` }, { img: `${base}/images/homepage/hp_event.JPG`, title: "Event", text: "Parties, once in a life time events, memorials, and performances", href: `${base}/pricing/event` }, { img: `${base}/images/homepage/hp_wedding.jpg`, title: "Wedding", text: "I hate weddings but if you want to pay me to do it anyway I'm going to charge you a lot", href: `${base}/pricing/wedding` }, { img: `${base}/images/homepage/hp_canyoning.jpg`, title: "Canyoning", text: "Adventure and photo experience only Maui canyons can offer", href: `${base}/pricing/canyoning` }, { img: `${base}/images/homepage/3-2hp_tour.JPG`, title: "Photo Tour", text: "Ive found some lovely places and we can go shoot there", href: `${base}/pricing/tour` }] as service, i}
           <div class="film-strip-card">
             <a href={service.href} class="block w-full h-full">
               <div class="filmstrip">
@@ -731,14 +768,12 @@
       linear-gradient(
         to right,
         transparent calc(100% - var(--size)),
-        var(--background)
-          calc(100% - var(--size))
+        var(--background) calc(100% - var(--size))
       ),
       linear-gradient(
         to bottom,
         transparent calc(100% - var(--size)),
-        var(--background)
-          calc(100% - var(--size))
+        var(--background) calc(100% - var(--size))
       );
     background-size:
       var(--size) 100%,
@@ -934,15 +969,16 @@
     }
 
     li span {
-    display: inline-block;
-    transition: font-size 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
-                opacity 0.5s ease;
-  }
+      display: inline-block;
+      transition:
+        font-size 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+        opacity 0.5s ease;
+    }
 
-  .progress-indicator-circle {
-    transition-property: stroke-dashoffset;
-    transition-duration: 100ms;
-    transition-timing-function: linear;
-  }
+    .progress-indicator-circle {
+      transition-property: stroke-dashoffset;
+      transition-duration: 100ms;
+      transition-timing-function: linear;
+    }
   }
 </style>
