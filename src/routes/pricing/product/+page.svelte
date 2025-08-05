@@ -6,12 +6,12 @@
 
 <section class="py-12 fff4d4" in:fly={{ y: 50, duration: 500 }}>
   <div class="container mx-auto px-4">
-    <h2
-      class="text-3xl font-bold text-center mb-8"
+    <h1
+      class="font-serif text-green-900 text-3xl font-bold mb-4 mt-10 transition-all duration-500 text-center"
       in:fly={{ y: 30, duration: 400, delay: 100 }}
     >
       Commercial
-    </h2>
+    </h1>
     <!-- Thin Line Image -->
     <img
       src={dividerImage}
