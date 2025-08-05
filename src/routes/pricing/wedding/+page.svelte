@@ -1,10 +1,11 @@
 <script lang="ts">
+    import { base } from '$app/paths';
     import ContentSection from '$lib/components/ContentSection.svelte';
   
     // Portrait data
     const portraitData = {
       title: "Weddings",
-      mainImage: "/puameliaphoto_demo/images/pricing/wedding/weddings.jpg",
+      mainImage: `${base}/images/pricing/wedding/weddings.jpg`,
       description: "I'm sure you are going to be beautiful and are doing this for a good reason just don't come to me in 3 years when he hasn't touched you in 4 months and ask me why I didn't stop you.",
       whatIncluded: "What's Included:",
       includes: [
@@ -18,7 +19,7 @@
 
     const portraitData2 = {
       title: "Dress Portrait Session",
-      mainImage: "/puameliaphoto_demo/images/pricing/wedding/dress_portrait_session.jpg",
+      mainImage: `${base}/images/pricing/wedding/dress_portrait_session.jpg`,
       description: "Ah yes, the fun part. I'm into this",
       whatIncluded: "What's Included:",
       includes: [
