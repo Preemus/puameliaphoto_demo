@@ -136,7 +136,7 @@
     const isMobile = window.innerWidth < 768; // Common mobile breakpoint
 
     sections.forEach((section) => {
-      if (!section.classList.contains("homepage-last-section")) {
+      if (!section.classList.contains("homepage-plans-section")) {
         (section as HTMLElement).style.minHeight =
           `calc(100vh - ${headerHeight}px)`;
       }
@@ -147,11 +147,13 @@
       if (dataIndex === "1") {
         marginBottomValue = "0px";
         (section as HTMLElement).style.height = "auto";
-        (section as HTMLElement).style.minHeight = "70vh";
-      } else if (dataIndex === "3") {
+        (section as HTMLElement).style.minHeight = "90vh";
+      } else if (dataIndex === "2") {
         marginBottomValue = "100px";
+      } else if (dataIndex === "3") {
+        marginBottomValue = "0px";
       } else if (dataIndex === "4") {
-        marginBottomValue = "400px";
+        marginBottomValue = "100px";
       }
 
       if (isMobile) {
@@ -181,7 +183,7 @@
       );
 
       sections = Array.from(
-        document.querySelectorAll(".scroll-section, .homepage-last-section"),
+        document.querySelectorAll(".scroll-section, .homepage-plans-section"),
       );
 
       setSectionStyles();
@@ -206,7 +208,7 @@
     );
 
     document
-      .querySelectorAll(".scroll-section, .homepage-last-section")
+      .querySelectorAll(".scroll-section, .homepage-plans-section")
       .forEach((section) => {
         observer.observe(section);
       });
@@ -347,7 +349,7 @@
 </section>
 
 <section
-  class="scroll-section relative h-screen overflow-hidden"
+  class="scroll-section relative"
   data-index="2"
 >
   <div
@@ -412,7 +414,7 @@
           {/each}
         </ul>
 
-        <p class="text-white/90 text-1xl mt-6 italic">
+        <p class="text-white/90 text-1xl mt-6 mb-16 italic">
           "We are the ducks of the photo world. Equally comfortable in the air
           on the ground or in the water. If you need photos on rappel we got
           you."
@@ -422,11 +424,11 @@
   </div>
 </section>
 
-<section class="homepage-last-section" data-index="3">
+<section class="homepage-plans-section" data-index="3">
   <div class="content-wrapper relative">
-    <div class="container mx-auto px-4 py-12">
+    <div class="container mx-auto px-4 py-14">
       <div class="text-center mb-2">
-        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 mt-20">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4 mt-28">
           <span> Choose Your Adventure </span>
         </h2>
         <div class="flex justify-center mt-6">
@@ -719,7 +721,7 @@
     width: 100%;
   }
 
-  .homepage-last-section {
+  .homepage-plans-section {
     height: auto !important;
   }
 
