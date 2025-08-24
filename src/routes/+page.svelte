@@ -348,10 +348,7 @@
   </div>
 </section>
 
-<section
-  class="scroll-section relative"
-  data-index="2"
->
+<section class="scroll-section relative" data-index="2">
   <div
     class="content-wrapper flex justify-center items-center h-full relative z-10 max-w-screen-xl mx-auto"
   >
@@ -437,7 +434,7 @@
       </div>
 
       <div class="connected-film-grid">
-        {#each [{ img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heartfelt pictures of you and your crew", href: `${base}/pricing/portrait` }, { img: `${base}/images/homepage/3-2hp_ocean.jpg`, title: "Ocean", text: "I am at least semi aquatic. portraits underwater blue water or near the shore.", href: `${base}/pricing/ocean` }, { img: `${base}/images/homepage/3-2hp_drone.jpg`, title: "Drone", text: "Mapping and stitching services available for large areas", href: `${base}/pricing/drone` }, { img: `${base}/images/homepage/3-2hp_product.jpg`, title: "Product", text: "Showcase your work for promotion", href: `${base}/pricing/product` }, { img: `${base}/images/homepage/hp_event.JPG`, title: "Event", text: "Parties, once in a life time events, memorials, and performances", href: `${base}/pricing/event` }, { img: `${base}/images/homepage/hp_wedding.jpg`, title: "Wedding", text: "I hate weddings but if you want to pay me to do it anyway I'm going to charge you a lot", href: `${base}/pricing/wedding` }, { img: `${base}/images/homepage/hp_canyoning.jpg`, title: "Canyoning", text: "Adventure and photo experience only Maui canyons can offer", href: `${base}/pricing/canyoning` }, { img: `${base}/images/homepage/3-2hp_tour.JPG`, title: "Photo Tour", text: "Ive found some lovely places and we can go shoot there", href: `${base}/pricing/tour` }] as service, i}
+        {#each [{ img: `${base}/images/homepage/hp_portrait.JPG`, title: "Portrait", text: "Heartfelt pictures of you and your crew", href: `${base}/pricing/portrait` }, { img: `${base}/images/homepage/3-2hp_ocean.jpg`, title: "Ocean", text: "I am at least semi aquatic. Portraits underwater blue water or near the shore.", href: `${base}/pricing/ocean` }, { img: `${base}/images/homepage/3-2hp_drone.jpg`, title: "Drone", text: "Mapping and stitching services available for large areas", href: `${base}/pricing/drone` }, { img: `${base}/images/homepage/3-2hp_product.jpg`, title: "Product", text: "Showcase your work for promotion", href: `${base}/pricing/product` }, { img: `${base}/images/homepage/hp_event.JPG`, title: "Event", text: "Parties, once in a life time events, memorials, and performances", href: `${base}/pricing/event` }, { img: `${base}/images/homepage/hp_wedding.jpg`, title: "Wedding", text: "I hate weddings but if you want to pay me to do it anyway I'm going to charge you a lot", href: `${base}/pricing/wedding` }, { img: `${base}/images/homepage/hp_canyoning.jpg`, title: "Canyoning", text: "Adventure and photo experience only Maui canyons can offer", href: `${base}/pricing/canyoning` }, { img: `${base}/images/homepage/3-2hp_tour.JPG`, title: "Photo Tour", text: "Ive found some lovely places and we can go shoot there", href: `${base}/pricing/tour` }] as service, i}
           <div class="film-strip-card">
             <a href={service.href} class="block w-full h-full">
               <div class="filmstrip">
