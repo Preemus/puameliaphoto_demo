@@ -412,9 +412,7 @@
         </ul>
 
         <p class="text-white/90 text-1xl mt-6 mb-16 italic">
-          "We are the ducks of the photo world. Equally comfortable in the air
-          on the ground or in the water. If you need photos on rappel we got
-          you."
+          
         </p>
       </div>
     </div>
