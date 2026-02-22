@@ -112,6 +112,14 @@
     const scrollPos = window.scrollY;
     if (scrollPos < 0) return;
 
+    // When the page is at the very top, always show the first background.
+    // This avoids screen-size/layout differences causing the observer/viewport
+    // math to pick a later section on initial load.
+    if (scrollPos < 10) {
+      if (currentIndex !== 0 || visibleIndex !== 0) changeBackground(0);
+      return;
+    }
+
     const sectionPositions = calculateSectionPositions();
     const viewportMiddle = window.scrollY + window.innerHeight / 2;
 
@@ -192,6 +200,10 @@
 
     const observer = new IntersectionObserver(
       (entries) => {
+        if (window.scrollY < 10) {
+          if (currentIndex !== 0 || visibleIndex !== 0) changeBackground(0);
+          return;
+        }
         entries.forEach((entry) => {
           if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
             const newIndex = parseInt(
@@ -411,9 +423,7 @@
           {/each}
         </ul>
 
-        <p class="text-white/90 text-1xl mt-6 mb-16 italic">
-          
-        </p>
+        <p class="text-white/90 text-1xl mt-6 mb-16 italic"></p>
       </div>
     </div>
   </div>
