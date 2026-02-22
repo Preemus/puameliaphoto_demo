@@ -15,6 +15,8 @@
   let activeTextIndex = 0; // 0: Event, 1: Drone, 2: Canyoning
   let transitionProgress = 0;
   let videoElement: HTMLVideoElement | null = null;
+  let initialBackgroundLock = true;
+  let initialBackgroundLockTimeout: ReturnType<typeof setTimeout> | undefined;
 
   let backgrounds = [
     `${base}/images/top.jpg`,
@@ -50,10 +52,7 @@
     );
   };
 
-  const changeBackground = (newIndex: number) => {
-    clearTimeout(transitionTimeout);
-    visibleIndex = newIndex;
-
+  const applyBackground = (newIndex: number) => {
     // Clean up previous video tracking
     if (videoElement) {
       videoElement.ontimeupdate = null;
@@ -71,6 +70,22 @@
     }
 
     scrollIndicatorVisible = newIndex === 0;
+  };
+
+  const setBackgroundInstant = (newIndex: number) => {
+    clearTimeout(transitionTimeout);
+    visibleIndex = newIndex;
+    currentIndex = newIndex;
+    applyBackground(newIndex);
+  };
+
+  const changeBackground = (newIndex: number) => {
+    if (initialBackgroundLock && newIndex !== 0) return;
+
+    clearTimeout(transitionTimeout);
+    visibleIndex = newIndex;
+
+    applyBackground(newIndex);
 
     transitionTimeout = setTimeout(() => {
       currentIndex = newIndex;
@@ -116,7 +131,7 @@
     // This avoids screen-size/layout differences causing the observer/viewport
     // math to pick a later section on initial load.
     if (scrollPos < 10) {
-      if (currentIndex !== 0 || visibleIndex !== 0) changeBackground(0);
+      if (currentIndex !== 0 || visibleIndex !== 0) setBackgroundInstant(0);
       return;
     }
 
@@ -179,6 +194,16 @@
   }
 
   onMount(() => {
+    // Prevent a brief initial flash to other backgrounds during hydration/layout.
+    // If the browser restores scroll position, don't force-lock to index 0.
+    initialBackgroundLock = window.scrollY < 10;
+    if (initialBackgroundLock) {
+      setBackgroundInstant(0);
+      initialBackgroundLockTimeout = setTimeout(() => {
+        initialBackgroundLock = false;
+      }, 500);
+    }
+
     setTimeout(() => {
       const header = document.querySelector("header");
       const footer = document.querySelector("footer");
@@ -201,7 +226,7 @@
     const observer = new IntersectionObserver(
       (entries) => {
         if (window.scrollY < 10) {
-          if (currentIndex !== 0 || visibleIndex !== 0) changeBackground(0);
+          if (currentIndex !== 0 || visibleIndex !== 0) setBackgroundInstant(0);
           return;
         }
         entries.forEach((entry) => {
@@ -243,6 +268,8 @@
       window.removeEventListener("scroll", throttledScroll);
       window.removeEventListener("resize", handleResize);
       clearTimeout(transitionTimeout);
+      if (initialBackgroundLockTimeout)
+        clearTimeout(initialBackgroundLockTimeout);
       if (videoElement) videoElement.ontimeupdate = null;
     };
   });
